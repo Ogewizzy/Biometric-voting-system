@@ -8,6 +8,7 @@ if (window.location.pathname.includes("index.html")) {
         event.preventDefault();
 
         const name = document.getElementById("name").value;
+        const Matno = document.getElementById("matric").value;
         const fingerprint = document.getElementById("fingerprint").files[0];
 
         if (!fingerprint) {
@@ -20,6 +21,7 @@ if (window.location.pathname.includes("index.html")) {
         reader.onload = function (e) {
             const base64Image = e.target.result;
             localStorage.setItem("voterName", name);
+            localStorage.setItem("Matno", Matno)
             localStorage.setItem("fingerprintData", base64Image);
             window.location.href = "verify.html";
         };
@@ -98,10 +100,11 @@ if (window.location.pathname.includes("vote.html")) {
 if (window.location.pathname.includes("thankyou.html")) {
     const votedCandidate = localStorage.getItem("selectedVote");
     const name = localStorage.getItem("voterName");
+    const Matno = localStorage.getItem("Matno");
 
     const thankYouMessage = document.getElementById("thankYouMessage");
 
     if (thankYouMessage && name && votedCandidate) {
-        thankYouMessage.innerHTML = `Thank you, <strong>${name}</strong>, for voting!<br>You voted for <strong>${votedCandidate}</strong>.`;
+        thankYouMessage.innerHTML = `Thank you, <strong>${name}</strong> with MAT NO. <strong>${Matno}</strong>, for voting!<br>You voted for <strong>${votedCandidate}</strong>.`;
     }
 }

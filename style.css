@@ -1,16 +1,27 @@
 body {
   font-family: Arial, sans-serif;
   text-align: center;
-  background-color: #f0f2f5;
-  padding: 20px;
+  /* background-color: #f0f2f5;
+  padding: 20px; */
+  background-color: #0c57ec;
+  height: 100%;
+  background-image: url('Picture1.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-attachment: fixed;
+  background-color: black;
 }
 
+
+
 form {
-  background: #fff;
+  background: transparent;
   display: inline-block;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  height: 50%;
 }
 
 input[type="text"],
